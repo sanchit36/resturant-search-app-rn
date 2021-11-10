@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Text, View, StyleSheet } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
+import { Text, View, StyleSheet, ScrollView } from "react-native";
 import ResultsList from "../components/ResultsList";
 import SearchBar from "../components/SearchBar";
 import useResults from "../hooks/useResults";

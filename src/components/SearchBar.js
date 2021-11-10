@@ -1,14 +1,20 @@
 import React from "react";
 import { View, TextInput, StyleSheet } from "react-native";
 import { Feather } from "@expo/vector-icons";
+import generateBoxShadowStyle from "../hooks/generateBoxShadowStyle";
 
 const SearchBar = ({ term, onTermChange, onTermSubmit }) => {
   return (
-    <View style={styles.backgroundStyle}>
+    <View
+      style={[
+        styles.backgroundStyle,
+        generateBoxShadowStyle(-2, 4, "#171717", 0.2, 3, 4, "#171717"),
+      ]}
+    >
       <Feather name="search" style={styles.iconStyle} />
       <TextInput
         style={styles.inputStyle}
-        placeholder="Search"
+        placeholder="Resturant name, cuisine, or a dish"
         autoCapitalize="none"
         autoComplete={false}
         value={term}
@@ -21,12 +27,11 @@ const SearchBar = ({ term, onTermChange, onTermSubmit }) => {
 
 const styles = StyleSheet.create({
   backgroundStyle: {
-    backgroundColor: "#F0EEEE",
+    backgroundColor: "#FFFFFF",
     height: 50,
     borderRadius: 5,
-    marginTop: 10,
+    marginVertical: 10,
     marginHorizontal: 15,
-    marginBottom: 10,
     flexDirection: "row",
   },
   inputStyle: {
@@ -34,9 +39,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   iconStyle: {
-    fontSize: 35,
+    color: "red",
+    fontSize: 30,
     alignSelf: "center",
-    marginHorizontal: 10,
+    marginHorizontal: 15,
   },
 });
 

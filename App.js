@@ -5,13 +5,24 @@ import SearchScreen from "./src/screens/SearchScreen";
 
 const navigator = createStackNavigator(
   {
-    Search: SearchScreen,
-    ResultsShow: ResultsShowScreen,
+    Search: {
+      screen: SearchScreen,
+      title: "Tomato",
+    },
+    ResultsShow: {
+      screen: ResultsShowScreen,
+      navigationOptions: ({ navigation }) => ({
+        title: `${navigation.state.params.title}`,
+      }),
+    },
   },
   {
     initialRouteName: "Search",
     defaultNavigationOptions: {
-      title: "Business Search",
+      title: "Tomato",
+      cardStyle: {
+        backgroundColor: "#FFFFFF",
+      },
     },
   }
 );
